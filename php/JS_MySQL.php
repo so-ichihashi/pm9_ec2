@@ -1,10 +1,14 @@
 <?PHP
 ini_set('display_errors',1);
 // MySQLへ接続する準備。DB名や認証に必要な情報を格納
-$url = "localhost";
-$user = "ec2-user";
-$pass = "PCPytI.+X8xd";
+$dsn = "mysql:host=gt-rds-01.cla1hzgbicis.ap-northeast-1.rds.amazonaws.com;dbname=goToTravel;charset=utf8;";
+$url = "gt-rds-01.cla1hzgbicis.ap-northeast-1.rds.amazonaws.com";
+$user = "root";
+$pass = "uq721786";
 $db = "goToTravel";
+
+$dbh=new PDO($dsn, $user, $pass);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // MySQLへ接続する
 $connect = mysqli_connect($url, $user, $pass) or die("MySQLへの接続に失敗しました。");
