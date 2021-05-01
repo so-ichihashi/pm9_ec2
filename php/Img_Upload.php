@@ -1,9 +1,10 @@
 <?php
 
-$connect = new PDO("mysql:host=localhost;dbname=goToTravel;charset=utf8;", 'ec2-user', 'PCPytI.+X8xd' );
+$connect = new PDO("mysql:host=gt-rds-01.cla1hzgbicis.ap-northeast-1.rds.amazonaws.com;dbname=goToTravel;charset=utf8;", 'root', 'uq721786' );
 if(!$connect){
     echo "データベースに接続できません";
 }
+
 
 if( isset($_POST["action"]) )
 {
